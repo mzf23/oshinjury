@@ -18,6 +18,9 @@ embedding_dim = 100
 input_1 = Input(shape=(maxlen,))
 input_2 = Input(shape=(5,))
 
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, stratify=y)
+
 # Preprocess input_1 using TF-IDF
 tfidf_vectorizer = TfidfVectorizer()
 tfidf_vectorizer.fit(X1_train)
